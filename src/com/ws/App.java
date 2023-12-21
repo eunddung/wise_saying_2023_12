@@ -10,7 +10,6 @@ public class App {
 
 	public App(Scanner sc) {
 		this.sc = sc;
-
 	}
 
 	public void run() {
