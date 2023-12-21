@@ -2,7 +2,6 @@ package com.ws.wisesaying.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.ws.container;
 import com.ws.Rq;
 import com.ws.wisesaying.entity.WiseSaying;
@@ -39,22 +38,16 @@ public class WiseSayingController {
 				System.out.printf("%d  /  %s  /  %s\n", ws.getId(), ws.getAuthor(), ws.getContent());
 			}
 		}
-
 	}
 
 	public void remove(Rq rq) {
-		int id = -1;
+		int id = rq.getIntParam("id", -1);
 
-		try {
-			id = Integer.parseInt(rq.getParam("id"));
-			System.out.println(id);
-		} catch (NumberFormatException e) {
-			System.out.printf("id(정수)를 제대로 입력해주세요\n", id);
+		if (id == -1) {
+			System.out.println("id(정수)를 제대로 입력해주세요");
 			return;
 		}
 
 		System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
-
 	}
-
 }

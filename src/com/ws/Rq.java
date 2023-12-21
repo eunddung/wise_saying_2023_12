@@ -13,14 +13,11 @@ public class Rq {
 			return;
 		}
 		String[] paramBits = cmdBits[1].split("&");
-
 		for (String paramStr : paramBits) {
 			String[] paramStrBits = paramStr.split("=", 2);
-
 			if (paramBits.length == 1) {
 				continue;
 			}
-
 			String key = paramStrBits[0];
 			String value = paramStrBits[1];
 			params.put(key, value);
@@ -32,4 +29,14 @@ public class Rq {
 	public String getParam(String name) {
 		return params.get(name);
 	}
+
+	public int getIntParam(String name, int defaultValue) {
+		try {
+			return Integer.parseInt(getParam(name));
+		} catch (NumberFormatException e) {
+
+		}
+		return defaultValue;
+	}
+
 }
