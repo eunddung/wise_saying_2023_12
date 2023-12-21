@@ -27,7 +27,7 @@ public class App {
 			case "등록":
 				wiseSayingController.write();
 				break;
-			case "목록":            
+			case "목록":
 				wiseSayingController.list();
 				break;
 			case "삭제":
