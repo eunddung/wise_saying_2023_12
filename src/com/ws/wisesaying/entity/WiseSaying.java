@@ -1,3 +1,4 @@
+package com.ws.wisesaying.entity;
 public class WiseSaying {
 	private int id;
 	private String content;
