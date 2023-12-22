@@ -10,12 +10,17 @@ public class Rq {
 
 	public Rq(String cmd) {
 		String[] cmdBits = cmd.split("\\?", 2);
+
 		actionCode = cmdBits[0];
+
 		params = new HashMap<>();
+
 		if (cmdBits.length == 1) {
 			return;
 		}
+
 		String[] paramBits = cmdBits[1].split("&");
+
 		for (String paramStr : paramBits) {
 			String[] paramStrBits = paramStr.split("=", 2);
 
@@ -27,6 +32,7 @@ public class Rq {
 			String value = paramStrBits[1];
 			params.put(key, value);
 		}
+
 	}
 
 	public String getActionCode() {
@@ -41,7 +47,9 @@ public class Rq {
 		try {
 			return Integer.parseInt(getParam(name));
 		} catch (NumberFormatException e) {
+
 		}
 		return defaultValue;
 	}
+
 }
