@@ -9,9 +9,11 @@ import com.ws.wiseSaying.service.WiseSayingService;
 
 public class WiseSayingController {
 	private WiseSayingService wiseSayingService;
+
 	public WiseSayingController() {
 		wiseSayingService = new WiseSayingService();
 	}
+
 	public void write() {
 		System.out.print("명언 : ");
 		String content = Container.getScanner().nextLine().trim();
